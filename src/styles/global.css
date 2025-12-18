@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+/*Estoy usando tailwind 4 por lo que cambia un poco las cosas,
+en el video de Midu, el tiene un archivo separado, ahora no se hace así, si no que se utiliza el import
+y se declaran un poco diferente las cosas*/
+
+@variant dark (&:where(.dark, .dark *));
