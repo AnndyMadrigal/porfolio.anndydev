@@ -6,3 +6,12 @@ en el video de Midu, el tiene un archivo separado, ahora no se hace así, si no 
 y se declaran un poco diferente las cosas*/
 
 @variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* En v4, defines las variables aquí empezando con --color-
+     Tailwind automáticamente crea las clases bg-*, text-*, border-*, etc.
+  */
+  
+  --color-brand-softer: #dbeafe;       /* Aquí pon tu código HEX real */
+  --color-fg-brand-strong: #1e3a8a;    /* Aquí pon tu código HEX real */
+}
