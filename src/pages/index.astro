@@ -1,28 +1,80 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+import { Image } from "astro:assets";
+import fotoPerfil from "../img/FotoTrabajo.png";
+
+import Pills from "../components/Pills.astro";
+import LinkedInIcon from "../components/Icons/LinkedIn.astro";
+import GitHubIcon from "../components/Icons/GitHub.astro";
+import MailIcon from "../components/Icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import CodeIcon from "../components/Icons/Code.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Anndy's Porfolio">
-  <section class="w-full mx-auto lg:w-[740px] py-44">
-    <main>
-      <h1 class="text-white text-5xl font-bold flex flex-row pb-7">
+<Layout
+  title="Anndy's Porfolio - Web Developer and Programmer"
+  description="Hire Anndy Madrigal to develop your website, a skilled FullStack Developer specializing in creating visually appealing and user-friendly web pages."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-22">
+      <Image
+        class="rounded-full size-12 mb-3"
+        src={fotoPerfil}
+        alt="Anndy's Photo"
+      />
+
+      <h1
+        class="text-white text-3xl md:4-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-3 lg:pb-7"
+      >
         Hi, I'm Anndy
-        <div class="flex justify-center items-center">
-          <Badge>Disponible para trabajar</Badge>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/anndymadrigal/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Available for Work</Badge>
+        </a>
       </h1>
-      <h2 class="text-xl opacity-80">
-        I'm a student at University Fidélitas. FullStack Developer. From San
-        José, Costa Rica <img
-          src="https://flagcdn.com/cr.svg"
-          width="30"
-          alt="Bandera de Costa Rica"
-        />
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        I'm a student at University Fidélitas. <span class="text-yellow-200/100"
+          >FullStack Developer in progress.</span
+        > From San José, Costa Rica. <span class="opacity-80"
+          >Specialized in creating web pages that look good and are easy to use.</span
+        >
       </h2>
-      <ul></ul>
-    </main>
-  </section>
+      <nav class="flex gap-x-5 pt-5 flex-wrap">
+        <Pills>
+          <LinkedInIcon
+            class="size-4 md:size-6"
+            href="https://www.linkedin.com/in/anndymadrigal/"
+          />
+          LinkedIn
+        </Pills>
+        <Pills>
+          <GitHubIcon
+            class="size-4 md:size-6"
+            href="https://github.com/AnndyMadrigal"
+          />
+          GitHub
+        </Pills>
+        <Pills>
+          <MailIcon
+            class="size-4 md:size-6"
+            href="mailto:anndymadrigal@gmail.com"
+          />
+          anndymadrigal@gmail.com
+        </Pills>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="Projects">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7"/>
+        Projects
+      </h2>
+    </SectionContainer>
+  </main>
 </Layout>
