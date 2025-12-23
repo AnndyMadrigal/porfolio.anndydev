@@ -3,13 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
 import { Image } from "astro:assets";
 import fotoPerfil from "../img/FotoTrabajo.png";
-
 import Pills from "../components/Pills.astro";
 import LinkedInIcon from "../components/Icons/LinkedIn.astro";
 import GitHubIcon from "../components/Icons/GitHub.astro";
 import MailIcon from "../components/Icons/Mail.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import CodeIcon from "../components/Icons/Code.astro";
+import Projects from "../components/Projects.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
 
@@ -18,25 +18,26 @@ import CodeIcon from "../components/Icons/Code.astro";
   description="Hire Anndy Madrigal to develop your website, a skilled FullStack Developer specializing in creating visually appealing and user-friendly web pages."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-22">
-      <Image
-        class="rounded-full size-12 mb-3"
-        src={fotoPerfil}
-        alt="Anndy's Photo"
-      />
-
+    <SectionContainer class="py-44 pb-32">
+      <div class="flex gap-4 mb-4">
+        <Image
+          class="rounded-full size-16 shadow-lg"
+          src={fotoPerfil}
+          alt="Anndy's Photo"
+        />
+        <a
+          href="https://www.linkedin.com/in/anndymadrigal"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+          <Badge>Available for Work</Badge>
+        </a>
+      </div>
       <h1
         class="text-white text-3xl md:4-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-3 lg:pb-7"
       >
         Hi, I'm Anndy
-        <a
-          href="https://www.linkedin.com/in/anndymadrigal/"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Available for Work</Badge>
-        </a>
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         I'm a student at University Fidélitas. <span class="text-yellow-200/100"
@@ -45,36 +46,30 @@ import CodeIcon from "../components/Icons/Code.astro";
           >Specialized in creating web pages that look good and are easy to use.</span
         >
       </h2>
-      <nav class="flex gap-x-5 pt-5 flex-wrap">
-        <Pills>
+      <nav class="flex gap-x-2 pt-5 flex-wrap">
+        <Pills href="https://www.linkedin.com/in/anndymadrigal/">
           <LinkedInIcon
             class="size-4 md:size-6"
-            href="https://www.linkedin.com/in/anndymadrigal/"
           />
           LinkedIn
         </Pills>
-        <Pills>
-          <GitHubIcon
-            class="size-4 md:size-6"
-            href="https://github.com/AnndyMadrigal"
-          />
+        <Pills href="https://github.com/AnndyMadrigal">
+          <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </Pills>
-        <Pills>
-          <MailIcon
-            class="size-4 md:size-6"
-            href="mailto:anndymadrigal@gmail.com"
-          />
+        <Pills href="mailto:anndymadrigal@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
           anndymadrigal@gmail.com
         </Pills>
       </nav>
     </SectionContainer>
 
     <SectionContainer id="Projects">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <CodeIcon class="size-7"/>
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7 " />
         Projects
       </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>
