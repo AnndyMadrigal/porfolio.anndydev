@@ -1,9 +1,15 @@
 ---
+import LinkButton from "./LinkButton.astro";
+import Link from "./Icons/Link.astro";
+import GitHub from "./Icons/GitHub.astro";
 import JavaIcon from "./Icons/Java.astro";
 import HtmlIcon from "./Icons/HTML.astro";
 import JsIcon from "./Icons/JS.astro";
 import SpringIcon from "./Icons/SpringBoot.astro";
 import MySqlIcon from "./Icons/MySQL.astro";
+import PHPIcon from "./Icons/PHP.astro";
+import BootIcon from "./Icons/BootStrap.astro";
+import OracleIcon from "../assets/Oracle.svg";
 
 const TAGS = {
   Java: {
@@ -34,23 +40,56 @@ const TAGS = {
     class: "bg-blue-600/20 text-blue-400/100",
     icon: MySqlIcon,
   },
+
+  PHP: {
+    name: "PHP",
+    class: "bg-purple-600/20 text-purple-400/100",
+    icon: PHPIcon,
+  },
+
+  BootStrap: {
+    name: "BootStrap",
+    class: "bg-purple-600/20 text-purple-400/100",
+    icon: BootIcon},
+
+  Oracle: {
+    name: "Oracle",
+    class: "bg-red-600/20 text-red-400/100",
+    icon: OracleIcon,
+  },
 };
 
 const PROJECTS = [
   {
     title: "TechShop E-commerce",
     description:
-      "Created from scratch, Techshop its a fictional web store that sells different kinds of hardware and software. It has a cart fuctionality and security roles for different views depending on the priviliges that the user loged in has, queries, verification of created user via email, cloud data base, different language options, among others features.",
+      "Created from scratch, Techshop its a fictional web store that sells different kinds of hardware and software. It has a shopping cart fuctionality and security roles for different views depending on the priviliges that the user loged in has, queries, verification of created user via email, cloud data base, different language options, among others features.",
     link: "https://tienda-vm-zv8c.onrender.com/",
     github: "https://github.com/AnndyMadrigal/Techshop",
     image: "/projects/TechShop.webp",
-    tags: [TAGS.Java, TAGS.HTML, TAGS.JavaScript, TAGS.SpringBoot, TAGS.MySQL],
+    tags: [TAGS.Java, TAGS.HTML, TAGS.JavaScript, TAGS.SpringBoot, TAGS.MySQL, TAGS.BootStrap],
+  },
+  {
+    title: "Mary's Sweet Cakes6",
+    description:
+      "Created from scratch, Mary's Sweet Cakes is a fictional web page that sells all types of bakery. It uses an API via AJAX for registration purposes, when the user types his ID, the API gives back that user name, so there are no mistakes. It has a shopping cart, roles for different views depending on the priviliges that the user has, a dashboard for a quick look at the state of the orders. You can also make a specific order and receive confirmation and an invoice of that specific order via email, among others features.",
+    github: "https://github.com/NuBcOd3r/WCS-PROYECTO",
+    image: "/projects/Mary's_SweetCakes.webp",
+    tags: [TAGS.PHP, TAGS.HTML, TAGS.JavaScript, TAGS.MySQL, TAGS.BootStrap],
+  },
+  {
+    title: "Salud Total Hospital System",
+    description:
+      "Created from scratch, Salud Total its a fictional administration system for an hospital using Oracle. This is the most robust database that I've created. It handles all the important aspects of a hospital management system, like patients, billing, and inventory. Has verifications for preventing data inconsistencies. It also includes stored procedures and triggers to automate tasks such as updating patients info and generating billing statements, all you have to do is to click a button, the backend/database handles everything else.",
+    github: "https://github.com/AnndyMadrigal/SaludTotal",
+    image: "/projects/SaludTotal.webp",
+    tags: [TAGS.PHP, TAGS.HTML, TAGS.JavaScript, TAGS.Oracle, TAGS.BootStrap],
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, link, github }) => (
     <article>
       <h3 class="text-2xl font-semibold text-yellow-200/100 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
@@ -71,6 +110,21 @@ const PROJECTS = [
           src={image}
           alt={`Screenshot of the project ${image}`}
         />
+        <footer class="flex items-end justify-start mt-4 mb-8 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-4 md:size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4 md:size-6" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
     </article>
   ))
 }
