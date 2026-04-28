@@ -10,6 +10,9 @@ import MySqlIcon from "./Icons/MySQL.astro";
 import PHPIcon from "./Icons/PHP.astro";
 import BootIcon from "./Icons/BootStrap.astro";
 import OracleIcon from "../assets/Oracle.svg";
+import SQLServerIcon from "./Icons/SQLServer.astro";
+import CSharpIcon from "./Icons/CSharp.astro";
+import DotNetIcon from "./Icons/.NETFramework.astro";
 
 const TAGS = {
   Java: {
@@ -57,17 +60,40 @@ const TAGS = {
     class: "bg-red-600/20 text-red-400/100",
     icon: OracleIcon,
   },
+  SQLServer: {
+    name: "SQL Server",
+    class: "bg-blue-600/20 text-blue-400/100",
+    icon: SQLServerIcon,
+  },
+  CSharp: {
+    name: "C#",
+    class: "bg-purple-600/20 text-white-400/100",
+    icon: CSharpIcon,
+  },
+  DotNetFramework: {
+    name: ".NET Framework",
+    class: "bg-purple-600/20 text-white-400/100",
+    icon: DotNetIcon,
+  }
 };
 
 const PROJECTS = [
+  
   {
-    title: "TechShop E-commerce",
+    title: "Espiga Dorada Bakery Shop",
     description:
-      "Created from scratch, Techshop its a fictional web store that sells different kinds of hardware and software. It has a shopping cart fuctionality and security roles for different views depending on the priviliges that the user loged in has, queries, verification of created user via email, cloud data base, different language options, among others features.",
-    link: "https://tienda-vm-zv8c.onrender.com/",
-    github: "https://github.com/AnndyMadrigal/Techshop",
-    image: "/projects/TechShop.webp",
-    tags: [TAGS.Java, TAGS.HTML, TAGS.JavaScript, TAGS.SpringBoot, TAGS.MySQL, TAGS.BootStrap],
+      "Created from scratch, Espiga Dorada is a fictional bakery shop website. It features a modern design, responsive layout, and seamless user experience. The site includes user registration and authentication, recovery of password via email, a product catalog, shopping cart functionality, and a simple checkout process. It has an admin panel for managing products, orders, customers and reports in pdf and excel formats.",
+    github: "https://github.com/AnndyMadrigal/PA-PROYECTO-ESPIGADORADA",
+    image: "/projects/EspigaDorada.webp",
+    tags: [TAGS.CSharp, TAGS.HTML, TAGS.JavaScript, TAGS.SQLServer, TAGS.BootStrap, TAGS.DotNetFramework],
+  },
+  {
+    title: "Salud Total Hospital System",
+    description:
+      "Created from scratch, Salud Total its a fictional administration system for an hospital using Oracle. This is the most robust database that I've created. It handles all the important aspects of a hospital management system, like patients, billing, and inventory. Has verifications for preventing data inconsistencies. It also includes stored procedures and triggers to automate tasks such as updating patients info and generating billing statements, all you have to do is to click a button, the backend/database handles everything else.",
+    github: "https://github.com/AnndyMadrigal/SaludTotal",
+    image: "/projects/SaludTotal.webp",
+    tags: [TAGS.PHP, TAGS.HTML, TAGS.JavaScript, TAGS.Oracle, TAGS.BootStrap],
   },
   {
     title: "Mary's Sweet Cakes",
@@ -78,13 +104,14 @@ const PROJECTS = [
     tags: [TAGS.PHP, TAGS.HTML, TAGS.JavaScript, TAGS.MySQL, TAGS.BootStrap],
   },
   {
-    title: "Salud Total Hospital System",
+    title: "TechShop E-commerce",
     description:
-      "Created from scratch, Salud Total its a fictional administration system for an hospital using Oracle. This is the most robust database that I've created. It handles all the important aspects of a hospital management system, like patients, billing, and inventory. Has verifications for preventing data inconsistencies. It also includes stored procedures and triggers to automate tasks such as updating patients info and generating billing statements, all you have to do is to click a button, the backend/database handles everything else.",
-    github: "https://github.com/AnndyMadrigal/SaludTotal",
-    image: "/projects/SaludTotal.webp",
-    tags: [TAGS.PHP, TAGS.HTML, TAGS.JavaScript, TAGS.Oracle, TAGS.BootStrap],
-  },
+      "Created from scratch, Techshop its a fictional web store that sells different kinds of hardware and software. It has a shopping cart fuctionality and security roles for different views depending on the priviliges that the user loged in has, queries, verification of created user via email, cloud data base, different language options, among others features.",
+    link: "https://tienda-vm-zv8c.onrender.com/",
+    github: "https://github.com/AnndyMadrigal/Techshop",
+    image: "/projects/TechShop.webp",
+    tags: [TAGS.Java, TAGS.HTML, TAGS.JavaScript, TAGS.SpringBoot, TAGS.MySQL, TAGS.BootStrap],
+  }
 ];
 ---
 
